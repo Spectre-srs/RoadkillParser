@@ -129,7 +129,7 @@ void P6T_ProcessImg4( int w, int h, const uint8* inpixels, uint8* outpixels )
 
 //----------------------------------------------------------
 std::string OutputFormat( const rTextureFormat& ) { return ".tga"; }
-int OutputTraits( const rTextureFormat& ) { return std::ios_base::binary; }
+std::ios_base::openmode OutputTraits( const rTextureFormat& ) { return std::ios_base::binary; }
 void ConvertAndSave( const rTextureFormat& tex, std::ostream &tga )
 {
 	// tga header
@@ -244,7 +244,7 @@ inline void PutFace3( std::stringstream& buff, int a, int b, int c )
 
 //----------------------------------------------------------
 std::string OutputFormat( const rModelFormat& ) { return ".obj"; }
-int OutputTraits( const rModelFormat& ) { return 0; }
+std::ios_base::openmode OutputTraits( const rModelFormat& ) { return std::ios_base::out; }
 void ConvertAndSave( const rModelFormat& smb, std::ostream &obj )
 {
 	std::stringstream vertices;
@@ -371,7 +371,7 @@ void ConvertAndSave( const rModelFormat& smb, std::ostream &obj )
 
 //----------------------------------------------------------
 std::string OutputFormat( const rArenaFormat& ) { return ".obj"; }
-int OutputTraits( const rArenaFormat& ) { return 0; }
+std::ios_base::openmode OutputTraits( const rArenaFormat& ) { return std::ios_base::out; }
 void ConvertAndSave( const rArenaFormat& bqs, std::ostream &obj )
 {
 	std::stringstream vertices;
