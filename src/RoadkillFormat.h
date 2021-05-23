@@ -16,7 +16,7 @@
 // _x variables have the exact same value across every single file, written as hex in its name
 // _const variables are the same, but their meaning is somewhat deducible
 // _unk variables have values that do change, but their meaning wasn't identified
-// _ver¹ variables are dependent on the file format version and may be absent in another
+// _ver variables are dependent on the file format version and may be absent in another
 // _debug variables are not part of the file format, and hold arbitrary data about the parsing process
 
 #include <istream>
@@ -311,7 +311,7 @@ struct rModelCollision //100%
 		}
 		else
 		{
-			strcpy_s(_ver6_constLegacy, "theLegacyCollisionPart" );
+			strcpy(_ver6_constLegacy, "theLegacyCollisionPart" );
 		}
 
 		Read( file, _x01000000 );
